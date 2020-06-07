@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class User {
 
+    private int userId;
     private String email;
     private String name;
     private String surname;
@@ -21,13 +22,14 @@ public class User {
     @Override
     public boolean equals(Object o) {
         User e = (User) o;
-        return (this.email.equals(e.email)) && (this.name.equals(e.name)) && (this.surname.equals(e.surname))
-                && (this.address.equals(e.address)) && (this.phone.equals(e.phone));
+        return (this.userId == e.userId) && (this.email.equals(e.email)) && (this.name.equals(e.name))
+                && (this.surname.equals(e.surname)) && (this.address.equals(e.address))
+                && (this.phone.equals(e.phone));
     }
 
     @Override
     public String toString() {
-        return name + " " + surname + " : " + email;
+        return "id: " + userId + " - " + name + " " + surname + " : " + email;
     }
 
     @Override
@@ -42,6 +44,14 @@ public class User {
         System.out.println("E-mail: " + email);
         System.out.println("Address: " + address);
         System.out.println("Phone: " + phone);
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int id) {
+        this.userId = id;
     }
 
     public String getEmail() {
