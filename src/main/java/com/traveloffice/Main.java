@@ -1,8 +1,5 @@
 package com.traveloffice;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Main {
     public static void main (String[] args) throws java.lang.Exception {
         System.out.println("Welcome in TRAVEL OFFICE");
@@ -27,8 +24,10 @@ public class Main {
                 2020, 8, 31, 4859.99,
                 "Kite & Windsurfing extreme camp", "Spain", "Fuerteventura"));
 
-        offerRepository.getAll();
-        offerRepository.getOfferByName("ReLaax").showDetails();
+        System.out.println("======================  OFFERS LIST ======================");
+        Utils.printSet(offerRepository.getAll());
+
+        Utils.printOfferDetails(offerRepository.getOfferByName("ReLaax"));
 
         //User constructor: String email, String name, String surname,
         //                  String address, String phone
@@ -39,7 +38,7 @@ public class Main {
         User user3 = new User("tomasz.kot@transbud.pl", "Tomasz", "Kot",
                 "ul. Lipowa 45, 45-225 Lipno", "878204152");
 
-        user1.showDetails();
+        Utils.printUserDetails(user1);
 
         UserRepository userRepository = new UserRepository();
         userRepository.addUser(user1);
@@ -47,7 +46,9 @@ public class Main {
         userRepository.addUser(user3);
         userRepository.addUser(new User("tomcat@weapon.com", "Tomisław", "Wybuchowy",
                                 "ul. Okopowa 21, 78-221 Ozimek", "999888777"));
-        userRepository.getAll();
+
+        System.out.println("======================  USERS LIST ======================");
+        Utils.printSet(userRepository.getAll());
 
         BookingRepository bookingRepository = new BookingRepository();
 
@@ -72,8 +73,8 @@ public class Main {
         booking21.confirm();
         booking31.cancel();
 
-        bookingRepository.showOfferUsers(101, offerRepository, userRepository);
-        bookingRepository.showOfferUsers(102, offerRepository, userRepository);
+        Utils.printOfferUsers(101, offerRepository, userRepository, bookingRepository);
+        Utils.printOfferUsers(102, offerRepository, userRepository, bookingRepository);
 
     }
 

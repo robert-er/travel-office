@@ -22,7 +22,7 @@ public class User {
     @Override
     public boolean equals(Object o) {
         User e = (User) o;
-        return (this.userId == e.userId) && (this.email.equals(e.email)) && (this.name.equals(e.name))
+        return (this.email.equals(e.email)) && (this.name.equals(e.name))
                 && (this.surname.equals(e.surname)) && (this.address.equals(e.address))
                 && (this.phone.equals(e.phone));
     }
@@ -35,15 +35,6 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(email, name, surname, address, phone);
-    }
-
-    public void showDetails() {
-        System.out.println("========== USER DETAILS ==========");
-        System.out.println("Name: " + name);
-        System.out.println("Surname: " + surname);
-        System.out.println("E-mail: " + email);
-        System.out.println("Address: " + address);
-        System.out.println("Phone: " + phone);
     }
 
     public int getUserId() {

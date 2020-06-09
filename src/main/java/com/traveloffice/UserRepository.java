@@ -14,11 +14,8 @@ public class UserRepository {
         userSet.add(user);
     }
 
-    public void getAll() {
-        System.out.println("======================  USERS LIST ======================");
-        for (User user : userSet) {
-            System.out.println(user);
-        }
+    public Set getAll() {
+        return userSet;
     }
 
     public User getUserById(int id) {

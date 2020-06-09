@@ -14,14 +14,8 @@ public class BookingRepository {
         bookingSet.add(booking);
     }
 
-    public void showOfferUsers(int offerId, OfferRepository offerRepository, UserRepository userRepository) {
-        System.out.println("================= USER LIST for trip " + offerRepository.getOfferById(offerId).getName() + " =================");
-
-        for(Booking booking : bookingSet) {
-            if (booking.getOfferId() == offerId) {
-                System.out.println(userRepository.getUserById(booking.getUserId()) + " - " + booking.getStatusString());
-            }
-        }
+    public Set<Booking> getAll() {
+        return bookingSet;
     }
 
 }

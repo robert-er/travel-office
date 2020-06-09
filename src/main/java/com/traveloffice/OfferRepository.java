@@ -14,15 +14,8 @@ public class OfferRepository {
         offerSet.add(offer);
     }
 
-    public Set<Offer> getOfferSet() {
+    public Set getAll() {
         return offerSet;
-    }
-
-    public void getAll() {
-        System.out.println("======================  OFFER LIST ======================");
-        for (Offer offer : offerSet) {
-            System.out.println(offer);
-        }
     }
 
     public Offer getOfferByName(String name) {
@@ -42,6 +35,5 @@ public class OfferRepository {
         }
         return null;
     }
-
 
 }
