@@ -23,7 +23,7 @@ public class OfferTestSuite {
         System.out.println("Preparing to execute test #" + testCounter);
     }
 
-    private Offer geneateOffer() {
+    private Offer generateOffer() {
         return new Offer("OfferName", 2020, 01, 01,
                 2020, 02, 02, 5487.48, "offer description",
                 "Offer country", "Offer city");
@@ -32,7 +32,7 @@ public class OfferTestSuite {
     @Test
     public void testGetOfferId() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         //When
         int id = offer.getOfferId();
         //Then
@@ -42,7 +42,7 @@ public class OfferTestSuite {
     @Test
     public void testSetOfferId() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         int id = 5;
         //When
         offer.setOfferId(id);
@@ -53,7 +53,7 @@ public class OfferTestSuite {
     @Test
     public void testGetName() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         //When
         String name = offer.getName();
         //Then
@@ -63,7 +63,7 @@ public class OfferTestSuite {
     @Test
     public void testSetName() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         String newName = "newOfferName";
         //When
         offer.setName(newName);
@@ -74,7 +74,7 @@ public class OfferTestSuite {
     @Test
     public void testGetStartDate() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         //When
         LocalDate startDate = offer.getStartDate();
         LocalDate expectedDate = LocalDate.of(2020, 01, 01);
@@ -85,7 +85,7 @@ public class OfferTestSuite {
     @Test
     public void testSetStartDate() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         LocalDate expectedDate = LocalDate.of(2025, 05, 05);
         //When
         offer.setStartDate(expectedDate);
@@ -94,9 +94,9 @@ public class OfferTestSuite {
     }
 
     @Test
-    public void testGetEndtDate() {
+    public void testGetEndDate() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         //When
         LocalDate endDate = offer.getEndDate();
         LocalDate expectedDate = LocalDate.of(2020, 02, 02);
@@ -105,9 +105,9 @@ public class OfferTestSuite {
     }
 
     @Test
-    public void testSetEndtDate() {
+    public void testSetEndDate() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         LocalDate expectedDate = LocalDate.of(2025, 06, 06);
         //When
         offer.setEndDate(expectedDate);
@@ -118,7 +118,7 @@ public class OfferTestSuite {
     @Test
     public void testGetPrice() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         //When
         double price = offer.getPrice();
         //Then
@@ -128,7 +128,7 @@ public class OfferTestSuite {
     @Test
     public void testSetPrice() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         double newPrice = 999.9;
         //When
         offer.setPrice(newPrice);
@@ -139,7 +139,7 @@ public class OfferTestSuite {
     @Test
     public void testGetDescription() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         //When
         String description = offer.getDescription();
         //Then
@@ -150,7 +150,7 @@ public class OfferTestSuite {
     @Test
     public void testSetDescription() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         String newDescription = "new description";
         //When
         offer.setDescription(newDescription);
@@ -161,7 +161,7 @@ public class OfferTestSuite {
     @Test
     public void testGetCountry() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         //When
         String country = offer.getCountry();
         //Then
@@ -172,7 +172,7 @@ public class OfferTestSuite {
     @Test
     public void testSetCountry() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         String newCountry = "new country";
         //When
         offer.setCountry(newCountry);
@@ -183,7 +183,7 @@ public class OfferTestSuite {
     @Test
     public void testGetCity() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         //When
         String city = offer.getCity();
         //Then
@@ -194,7 +194,7 @@ public class OfferTestSuite {
     @Test
     public void testSetCity() {
         //Given
-        Offer offer = geneateOffer();
+        Offer offer = generateOffer();
         String newCity = "new city";
         //When
         offer.setCity(newCity);
