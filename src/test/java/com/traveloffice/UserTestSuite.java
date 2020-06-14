@@ -38,6 +38,18 @@ public class UserTestSuite {
     }
 
     @Test
+    public void testSetUserId() {
+        //Given
+        User user1 = generateUser();
+        int id = 3;
+        //When
+        user1.setUserId(id);
+        //Then
+        Assert.assertEquals(id,user1.getUserId());
+
+    }
+
+    @Test
     public void testGetEmail() {
         //Given
         User user1 = generateUser();
