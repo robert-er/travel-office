@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Offer {
 
+    private int offerId;
     private String name;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -29,14 +30,16 @@ public class Offer {
     @Override
     public boolean equals(Object o) {
         Offer e = (Offer) o;
-        return (this.name.equals(e.name)) && (this.startDate.equals(e.startDate)) && (this.endDate.equals(e.endDate))
-                && (this.price == e.price) && (this.description.equals(e.description))
-                && (this.country.equals(e.country)) && (this.city.equals(e.city));
+        return (this.name.equals(e.name)) && (this.startDate.equals(e.startDate))
+                && (this.endDate.equals(e.endDate)) && (this.price == e.price)
+                && (this.description.equals(e.description)) && (this.country.equals(e.country))
+                && (this.city.equals(e.city));
     }
 
     @Override
     public String toString() {
-        return name + " " + startDate + " - " + endDate + ". " + country + ", " + city + ". Price: " + price + " PLN";
+        return "id: " + offerId + " - " + name + " " + startDate + " - " + endDate + ". "
+                + country + ", " + city + ". Price: " + price + " PLN";
     }
 
     @Override
@@ -50,13 +53,12 @@ public class Offer {
         }
     }
 
-    public void showDetails() {
-        System.out.println("========== OFFER " + name + " DETAILS ==========");
-        System.out.println("Start date: " + startDate);
-        System.out.println("End date: " + endDate);
-        System.out.println("Price: " + price + " PLN");
-        System.out.println("Location: " + country + ", " + city);
-        System.out.println("Description: " + description);
+    public int getOfferId() {
+        return offerId;
+    }
+
+    public void setOfferId(int id) {
+        this.offerId = id;
     }
 
     public String getName() {
