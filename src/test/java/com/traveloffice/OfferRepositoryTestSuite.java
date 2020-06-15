@@ -47,12 +47,11 @@ public class OfferRepositoryTestSuite {
         OfferRepository offerRepository = new OfferRepository();
         Offer offer = generateOffer();
         offerRepository.addOffer(offer);
-        Set<Offer> expectedSet = new HashSet<>();
-        expectedSet.add(offer);
         //When
         Set offerSet = offerRepository.getAll();
         //Then
-        Assert.assertEquals(expectedSet, offerSet);
+        Assert.assertEquals(1, offerSet.size());
+        Assert.assertTrue(offerSet.contains(offer));
     }
 
     @Test

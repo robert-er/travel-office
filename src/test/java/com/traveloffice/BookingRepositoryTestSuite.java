@@ -45,11 +45,10 @@ public class BookingRepositoryTestSuite {
         BookingRepository bookingRepository = new BookingRepository();
         Booking booking = generateBooking();
         bookingRepository.addBooking(booking);
-        Set<Booking> expectedSet = new HashSet<>();
-        expectedSet.add(booking);
         //When
-        Set bookingSet = bookingRepository.getAll();
+        Set<Booking> bookingSet = bookingRepository.getAll();
         //Then
-        Assert.assertEquals(expectedSet, bookingSet);
+        Assert.assertEquals(1, bookingSet.size());
+        Assert.assertTrue(bookingSet.contains(booking));
     }
 }

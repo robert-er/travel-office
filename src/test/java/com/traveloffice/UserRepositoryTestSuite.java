@@ -47,12 +47,11 @@ public class UserRepositoryTestSuite {
         UserRepository userRepository = new UserRepository();
         User user = generateUser();
         userRepository.addUser(user);
-        Set<User> expectedSet = new HashSet<>();
-        expectedSet.add(user);
         //When
         Set userSet = userRepository.getAll();
         //Then
-        Assert.assertEquals(expectedSet, userSet);
+        Assert.assertEquals(1, userSet.size());
+        Assert.assertTrue(userSet.contains(user));
     }
 
     @Test
