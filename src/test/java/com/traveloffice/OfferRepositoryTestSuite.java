@@ -31,6 +31,17 @@ public class OfferRepositoryTestSuite {
     }
 
     @Test
+    public void testAddOffer() {
+        //Given
+        OfferRepository offerRepository = new OfferRepository();
+        Offer offer = generateOffer();
+        //When
+        offerRepository.addOffer(offer);
+        //Then
+        Assert.assertTrue(offerRepository.getAll().contains(offer));
+    }
+
+    @Test
     public void testGetAll() {
         //Given
         OfferRepository offerRepository = new OfferRepository();
